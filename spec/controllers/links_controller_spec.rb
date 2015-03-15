@@ -32,6 +32,11 @@ describe LinksController, type: :controller do
       post :create, link: attrs
       expect { post :create, link: attrs }.to change(user.links, :count).by(1)
     end
+
+    it "tweets the url" do
+      stub_tweet
+      post :create, link: attrs.merge(tweet: true)
+    end
   end
 
   describe "#show" do
