@@ -15,6 +15,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'bcrypt-ruby'
 gem 'omniauth-twitter'
+gem 'twitter'
 
 group :development, :test do
   gem 'byebug'
@@ -27,3 +28,6 @@ group :development, :test do
   gem 'database_cleaner'
 end
 
+group :test do
+  gem 'webmock'
+end
