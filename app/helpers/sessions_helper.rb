@@ -11,13 +11,13 @@ module SessionsHelper
   def authentication_required
     unless signed_in?
       store_location
-      redirect_to login_url, notice: t("flash.notice.signin")
+      redirect_to login_url, notice: "Please sign in"
     end
   end
 
   def redirect_back_or(default, msg={})
     redirect_to((session[:return_to] || default), msg)
-    session.delete(:return_to) 
+    session.delete(:return_to)
   end
 
   def store_location

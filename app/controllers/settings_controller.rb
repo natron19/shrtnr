@@ -1,6 +1,8 @@
 class SettingsController < ApplicationController
   include SessionsHelper
 
+  before_action :authentication_required
+
   def index
     @settings = current_user
   end

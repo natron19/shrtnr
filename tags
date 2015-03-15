@@ -40,6 +40,7 @@ home	app/controllers/dashboards_controller.rb	/^  def home$/;"	f	class:Dashboard
 index	app/controllers/dashboards_controller.rb	/^  def index$/;"	f	class:DashboardsController
 index	app/controllers/settings_controller.rb	/^  def index$/;"	f	class:SettingsController
 link_params	app/controllers/links_controller.rb	/^    def link_params$/;"	f	class:LinksController
+login_as	spec/support/authentication.rb	/^def login_as(user)$/;"	f
 new	app/controllers/sessions_controller.rb	/^  def new$/;"	f	class:SessionsController
 new	app/controllers/users_controller.rb	/^  def new$/;"	f	class:UsersController
 redirect_back_or	app/helpers/sessions_helper.rb	/^  def redirect_back_or(default, msg={})$/;"	f	class:SessionsHelper

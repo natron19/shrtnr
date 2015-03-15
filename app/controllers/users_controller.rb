@@ -9,7 +9,6 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to root_url, notice: "You have signed up"
     else
-      puts @user.errors.keys
       render "new"
     end
   end
@@ -17,6 +16,6 @@ class UsersController < ApplicationController
   private
 
     def user_params
-      params.require(:user).permit(:email, :password)
+      params.require(:user).permit(:email, :password, :password_confirmation)
     end
 end

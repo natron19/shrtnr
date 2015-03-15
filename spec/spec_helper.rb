@@ -15,12 +15,13 @@ RSpec.configure do |config|
     mocks.verify_partial_doubles = true
   end
 
-  config.infer_spec_type_from_file_location! 
+  config.infer_spec_type_from_file_location!
 
   config.include FactoryGirl::Syntax::Methods
+  config.include Capybara::DSL
 
   config.use_transactional_fixtures = false
-    
+
   config.before(:suite) do
     DatabaseCleaner.strategy = :truncation
   end
