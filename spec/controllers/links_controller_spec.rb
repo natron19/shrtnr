@@ -35,7 +35,8 @@ describe LinksController, type: :controller do
 
     it "tweets the url" do
       stub_tweet
-      post :create, link: attrs.merge(tweet: true)
+      post :create, link: attrs.merge(tweet: '1')
+      expect(WebMock).to have_requested(:post, /api.twitter.com/)
     end
   end
 
