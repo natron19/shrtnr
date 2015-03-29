@@ -2,6 +2,7 @@ require 'securerandom'
 
 class User < ActiveRecord::Base
   has_secure_password
+  before_create :generate_api_key
 
   has_many :links
 
@@ -25,5 +26,9 @@ class User < ActiveRecord::Base
       config.access_token_secret = twitter_secret
     end
     client.update(tweet)
+  end
+
+  def generate_api_key
+    self.api_key = SecureRandom.hex(16)
   end
 end
