@@ -3,9 +3,11 @@ require 'spec_helper'
 describe "creating a short url" do
   context "when not signed in" do
 
-    it "lets me get a new short url" do 
-      visit dashboard_path 
+    before do 
+      visit "/home" 
+    end 
 
+    it "lets me get a new short url" do 
       fill_in "link_long_url", with: "http://cnn.com"
       click_button "Shorten It!"
       expect(page).to have_content "http://cnn.com"
@@ -14,7 +16,6 @@ describe "creating a short url" do
     end 
 
     it "does not let me enter an invalid url" do 
-      visit dashboard_path 
 
       fill_in "link_long_url", with: "hbiob"
       click_button "Shorten It!"
@@ -29,10 +30,10 @@ describe "creating a short url" do
 
     before do
       login_as user
+      visit "/home"
     end
 
     it "lets me get a new short url" do 
-      visit dashboard_path 
 
       fill_in "link_long_url", with: "http://cnn.com"
       click_button "Shorten It!"
@@ -42,7 +43,6 @@ describe "creating a short url" do
     end 
 
     it "does not let me enter an invalid url" do 
-      visit dashboard_path
 
       fill_in "link_long_url", with: "hbiob"
       click_button "Shorten It!"

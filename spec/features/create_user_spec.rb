@@ -1,6 +1,13 @@
 require 'spec_helper'
 
 describe "creating a user" do
+
+  context "shows the sign up page" do 
+    visit "/users/new" 
+    expect(page).to have_content "Sign Up" 
+    expect(Page).to have_content "Email" 
+  end 
+
   context "with valid params" do
 
     before do
@@ -33,5 +40,6 @@ describe "creating a user" do
     it "tells the user they made a mistake" do
       expect(page).to have_content "Password confirmation doesn't match Password"
     end
+
   end
 end
