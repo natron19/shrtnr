@@ -16,7 +16,7 @@ class LinksController < ApplicationController
       end
     else
       if signed_in?
-        create_tweet 
+        create_tweet
         @link = current_user.links.build(link_params)
       else
         redirect_to link_path(url.short_url)
