@@ -16,6 +16,16 @@ class SettingsController < ApplicationController
     end
   end
 
+  def new_api_key
+    current_user.generate_api_key
+    if current_user.save 
+      redirect_to settings_path, notice: "New key for you"
+    else
+      redirect_to settings_path, notice: "No key for you" 
+    end 
+  end 
+
+
   private
 
     def settings_params

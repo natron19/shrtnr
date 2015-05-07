@@ -25,6 +25,7 @@
         <h6 class="text-center">Copy & Paste the following into your app:</h6>
         <pre class="text-center">http://shrtnr.com/api/v1/links/create?api_key=<%= @settings.api_key %>&url=%@</pre>
       </div>
+      <%= button_to "New Key", {action: "new_api_key"}, data: {confirm: "Are you sure?" }, class: "btn btn-danger", method:"put"%>
     </div>
   </div>
 </div>

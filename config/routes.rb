@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   post 'login' => 'sessions#create'
   get 'logout' => 'sessions#destroy', as: :logout
 
+  put '/settings/new_api_key' => 'settings#new_api_key', as: :new_api_key
+
   # oauth
   get 'auth/twitter/callback', to: 'sessions#twitter', as: :twitter_auth
   get 'auth/failure', to: 'sessions#failure'
