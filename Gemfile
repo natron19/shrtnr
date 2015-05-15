@@ -17,6 +17,11 @@ gem 'bcrypt-ruby'
 gem 'omniauth-twitter'
 gem 'twitter'
 
+gem 'foreman'
+gem 'sidekiq'
+gem 'whenever', :require => nil
+gem 'sinatra', :require => nil
+
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
@@ -27,6 +32,12 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'database_cleaner'
   gem 'mailcatcher'
+  # gem 'rack-mini-profiler', require: false
+  # gem 'bullet', '~> 4.14.4'
+  # gem 'brakeman', :require => false
+  # gem "rails_best_practices"
+  # gem 'rubocop', require: false
+  gem "rubycritic", :require => false
 end
 
 group :test do
